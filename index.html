@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Resume Creator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Input container starts here -->
+    <section class="resume-builder">
+        <div class="container">
+            <h1>Resume Creator</h1>
+            <div class="resume_container">
+                <form class="inputField" id="resumeForm">
+                    <input type="text" name="name" id="name" placeholder="Your Name" title="Enter Your Name">
+                    <input type="text" name="title" id="title" placeholder="Title / Sub Heading" title="Enter Title / Sub Heading">
+                    
+                    <textarea name="work_experience" id="work_experience" placeholder="Work Experience" cols="40" rows="3" title="Enter Your Work Experience"></textarea>
+                    
+                    <textarea name="academic_details" id="academic_details" placeholder="Academic Details" cols="40" rows="3" title="Enter Your Academic Details"></textarea>
+                    
+                    <input type="text" name="objective" id="objective" placeholder="Objective" title="Enter Your Objective">
+                    
+                    <textarea name="skills" id="skills" placeholder="Skills" cols="40" rows="3" title="Enter Your Skills"></textarea>
+                    
+                    <textarea name="projects" id="projects" placeholder="Projects" cols="40" rows="3" title="Enter Your Projects"></textarea>
+                    
+                    <textarea name="achievements" id="achievements" placeholder="Achievements" cols="40" rows="3" title="Enter Your Achievements"></textarea>
+                    
+                    <textarea name="contact" id="contact" placeholder="Contact Information" cols="40" rows="3" title="Enter Your Contact Information"></textarea>
+                </form>
+            </div>
+
+            <p class="tip">**You can use markup in the text area for text decoration**</p>
+
+            <!-- Button for generating resume -->
+            <button class="generate-btn" onclick="generateResume()">Generate Resume</button>
+        </div>
+    </section>
+    <!-- Resume Preview Modal -->
+<div id="resumeModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Resume Preview</h2>
+        <div id="modalResumeContent"></div>
+    </div>
+</div>
+
+    
+    <!-- Output container for displaying the resume -->
+    <div class="output_container" id="output"></div>
+
+    <!-- Script link -->
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+     <!-- Generate and Download Buttons -->
+<!-- <button class="generate-btn" onclick="generateResume()">Generate Resume</button> -->
+<button class="download-btn" onclick="downloadPDF()">Download as PDF</button>
+
+</body>
+</html>
